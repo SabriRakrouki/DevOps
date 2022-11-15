@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -81,9 +81,16 @@
 			<version>2.22.2</version>
 		</dependency>
 	</dependencies>
-
+ <distributionManagement>
+        <repository>
+            <id>maven-nexus-repo</id>
+            <name>Nexus Repository</name>
+            <url>http://localhost:8081/repository/maven-nexus-repo/</url>
+        </repository>
+    </distributionManagement>
 	<build>
 		<plugins>
+			
 		<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -147,6 +154,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		 <finalName>DevOps</finalName>
 	</build>
 
 </project>
