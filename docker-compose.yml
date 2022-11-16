@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: achatproject:latest
+    image: mohamedbembli/achatproject:latest
     build:
       context: .
 
