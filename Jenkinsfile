@@ -137,19 +137,19 @@ stage("Maven Build") {
         }
         success {
             echo 'I succeeded!'
-             mail to: 'alaaabdessalem.moalla@esprit.com',
+             mail to: 'alaaabdessalem.moalla@esprit.tn',
              subject: "The Pipeline: ${currentBuild.fullDisplayName} succeeded",
              body: "The Pipeline ${env.BUILD_URL} completed successfully."
         }
         unstable {
             echo 'I am unstable :/'
-             mail to: 'alaaabdessalem.moalla@esprit.com',
+             mail to: 'alaaabdessalem.moalla@esprit.tn',
              subject: "Unstable Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
         }
         failure {
             echo 'I failed :('
-             mail to: 'alaaabdessalem.moalla@esprit.com',
+             mail to: 'alaaabdessalem.moalla@esprit.tn',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
         }
