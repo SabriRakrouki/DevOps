@@ -124,7 +124,7 @@ stage("Maven Build") {
         
         stage('Docker Compose') {
             steps {
-            sh 'docker-compose up'
+            sh 'docker-compose up -d'
             }
         }
 
@@ -137,19 +137,19 @@ stage("Maven Build") {
         }
         success {
             echo 'I succeeded!'
-             mail to: 'alaa.moalla.esprit@yopmail.com',
+             mail to: 'alaaabdessalem.moalla@esprit.com',
              subject: "The Pipeline: ${currentBuild.fullDisplayName} succeeded",
              body: "The Pipeline ${env.BUILD_URL} completed successfully."
         }
         unstable {
             echo 'I am unstable :/'
-             mail to: 'alaa.moalla.esprit@yopmail.com',
+             mail to: 'alaaabdessalem.moalla@esprit.com',
              subject: "Unstable Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
         }
         failure {
             echo 'I failed :('
-             mail to: 'alaa.moalla.esprit@yopmail.com',
+             mail to: 'alaaabdessalem.moalla@esprit.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
         }
